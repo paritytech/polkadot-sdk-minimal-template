@@ -1,0 +1,56 @@
+[package]
+name = "minimal-template-runtime"
+description = "A solochain runtime template built with Substrate, part of Polkadot Sdk. (polkadot v1.9.0)"
+version = "0.1.0"
+license = "MIT-0"
+authors.workspace = true
+homepage.workspace = true
+repository.workspace = true
+edition.workspace = true
+publish = false
+
+[lints]
+workspace = true
+
+[dependencies]
+parity-scale-codec = { version = "3.0.0", default-features = false }
+scale-info = { version = "2.6.0", default-features = false }
+
+# this is a frame-based runtime, thus importing `frame` with runtime feature enabled.
+frame = { version = "0.1.1", package = "polkadot-sdk-frame", default-features = false, features = ["experimental", "runtime"] }
+
+# pallets that we want to use
+pallet-balances = { version = "31.0.0", default-features = false }
+pallet-sudo = { version = "31.0.0", default-features = false }
+pallet-timestamp = { version = "30.0.0", default-features = false }
+pallet-transaction-payment = { version = "31.0.0", default-features = false }
+pallet-transaction-payment-rpc-runtime-api = { version = "31.0.0", default-features = false }
+
+# genesis builder that allows us to interacto with runtime genesis config
+sp-genesis-builder = { version = "0.10.0", default-features = false }
+
+# local pallet templates
+pallet-minimal-template = { path = "../pallets/template", default-features = false, version = "0.1.0" }
+
+[build-dependencies]
+substrate-wasm-builder = { version = "20.0.0", optional = true }
+
+[features]
+default = ["std"]
+std = [
+	"parity-scale-codec/std",
+	"scale-info/std",
+
+	"frame/std",
+
+	"pallet-balances/std",
+	"pallet-sudo/std",
+	"pallet-timestamp/std",
+	"pallet-transaction-payment-rpc-runtime-api/std",
+	"pallet-transaction-payment/std",
+
+	"pallet-minimal-template/std",
+
+	"sp-genesis-builder/std",
+	"substrate-wasm-builder",
+]
