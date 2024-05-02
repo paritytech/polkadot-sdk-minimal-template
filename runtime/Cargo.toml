@@ -1,6 +1,6 @@
 [package]
 name = "minimal-template-runtime"
-description = "A solochain runtime template built with Substrate, part of Polkadot Sdk. (polkadot v1.9.0)"
+description = "A solochain runtime template built with Substrate, part of Polkadot Sdk. (polkadot v1.11.0)"
 version = "0.1.0"
 license = "MIT-0"
 authors.workspace = true
@@ -17,23 +17,24 @@ parity-scale-codec = { version = "3.0.0", default-features = false }
 scale-info = { version = "2.6.0", default-features = false }
 
 # this is a frame-based runtime, thus importing `frame` with runtime feature enabled.
-frame = { version = "0.1.1", package = "polkadot-sdk-frame", default-features = false, features = ["experimental", "runtime"] }
+frame = { package = "polkadot-sdk-frame", path = "../../../substrate/frame", default-features = false, features = ["experimental", "runtime"], version = "0.1.0" }
 
 # pallets that we want to use
-pallet-balances = { version = "31.0.0", default-features = false }
-pallet-sudo = { version = "31.0.0", default-features = false }
-pallet-timestamp = { version = "30.0.0", default-features = false }
-pallet-transaction-payment = { version = "31.0.0", default-features = false }
-pallet-transaction-payment-rpc-runtime-api = { version = "31.0.0", default-features = false }
+pallet-balances = { version = "34.0.0", default-features = false }
+pallet-sudo = { version = "33.0.0", default-features = false }
+pallet-timestamp = { version = "32.0.0", default-features = false }
+pallet-transaction-payment = { version = "33.0.0", default-features = false }
+pallet-transaction-payment-rpc-runtime-api = { version = "33.0.0", default-features = false }
 
-# genesis builder that allows us to interacto with runtime genesis config
-sp-genesis-builder = { version = "0.10.0", default-features = false }
+# genesis builder that allows us to interact with runtime genesis config
+sp-genesis-builder = { version = "0.12.0", default-features = false }
+sp-runtime = { version = "36.0.0", default-features = false, features = ["serde"] }
 
 # local pallet templates
 pallet-minimal-template = { path = "../pallets/template", default-features = false, version = "0.1.0" }
 
 [build-dependencies]
-substrate-wasm-builder = { version = "20.0.0", optional = true }
+substrate-wasm-builder = { version = "22.0.0", optional = true }
 
 [features]
 default = ["std"]
@@ -52,5 +53,6 @@ std = [
 	"pallet-minimal-template/std",
 
 	"sp-genesis-builder/std",
+	"sp-runtime/std",
 	"substrate-wasm-builder",
 ]
