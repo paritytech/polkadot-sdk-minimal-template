@@ -28,3 +28,6 @@ jobs:
 
       - name: Build the docker image
         run: docker build . -t polkadot-sdk-minimal-template
+
+      - name: Try running the container
+        run: docker run --rm polkadot-sdk-minimal-template --help

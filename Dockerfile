@@ -1,30 +1,28 @@
-# This is the build stage for Polkadot. Here we create the binary in a temporary image.
 FROM docker.io/paritytech/ci-unified:latest as builder
 
 WORKDIR /polkadot
 COPY . /polkadot
 
+RUN cargo fetch
 RUN cargo build --locked --release
 
-# This is the 2nd stage: a very small image where we copy the Polkadot binary."
 FROM docker.io/parity/base-bin:latest
 
-LABEL description="Multistage Docker image for Polkadot: a platform for web3"
+COPY --from=builder /polkadot/target/release/minimal-template-node /usr/local/bin
 
-COPY --from=builder /polkadot/target/release/polkadot /usr/local/bin
-
-RUN useradd -m -u 1000 -U -s /bin/sh -d /polkadot polkadot && \
+USER root
+RUN useradd -m -u 1001 -U -s /bin/sh -d /polkadot polkadot && \
 	mkdir -p /data /polkadot/.local/share && \
 	chown -R polkadot:polkadot /data && \
 	ln -s /data /polkadot/.local/share/polkadot && \
 # unclutter and minimize the attack surface
 	rm -rf /usr/bin /usr/sbin && \
 # check if executable works in this container
-	/usr/local/bin/polkadot --version
+	/usr/local/bin/minimal-template-node --version
 
 USER polkadot
 
 EXPOSE 30333 9933 9944 9615
 VOLUME ["/data"]
 
-ENTRYPOINT ["/usr/local/bin/polkadot"]
+ENTRYPOINT ["/usr/local/bin/minimal-template-node"]
