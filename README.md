@@ -9,5 +9,5 @@ Docs](https://doc.rust-lang.org/cargo/commands/cargo-doc.html) for this template
 with this command:
 
 ```sh
-cargo doc -p minimal-template --open
+cargo doc -p pallet-minimal-template --open
 ```
