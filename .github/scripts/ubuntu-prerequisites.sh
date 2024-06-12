@@ -1,4 +1,4 @@
-#/usr/env bash
+#!/usr/env bash
 set -euo pipefail
 
 apt-get update
