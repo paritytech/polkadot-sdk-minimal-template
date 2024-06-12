@@ -21,12 +21,12 @@ jobs:
           - "debian:latest"
     container: ${{ matrix.container }}
     steps:
+      - uses: actions/checkout@v3
+
       - name: Run the prerequisites script
         run: |
           DIST="$(echo "${{ matrix.container }}" | cut -d':' -f1)"
           sh ./.github/scripts/${DIST}-prerequisites.sh
-
-      - uses: actions/checkout@v3
 
       # We've run into out-of-disk error when compiling Polkadot in the next step, so we free up some space this way.
       - name: Free Disk Space (Ubuntu)
