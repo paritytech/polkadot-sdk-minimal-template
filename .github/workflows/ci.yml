@@ -23,7 +23,7 @@ jobs:
       - name: Run the prerequisites script
         run: |
           DIST="$(echo "${{ matrix.container }}" | cut -d':' -f1)"
-          ./.github/scripts/${DIST}-prerequisites.sh
+          bash ./.github/scripts/${DIST}-prerequisites.sh
         shell: bash
 
       # - name: Rust compilation prerequisites
