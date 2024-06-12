@@ -1,5 +1,5 @@
-#!/usr/env bash
-set -euo pipefail
+#!/usr/env sh
+set -eu
 
 apt-get update
 apt-get install -y curl git protobuf-compiler build-essential libclang-15-dev
