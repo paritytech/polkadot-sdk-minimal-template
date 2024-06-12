@@ -18,7 +18,6 @@ jobs:
         container:
           - "ubuntu:22.04"
           - "ubuntu:latest"
-          - "debian:11.9"
           - "debian:latest"
     container: ${{ matrix.container }}
     steps:
