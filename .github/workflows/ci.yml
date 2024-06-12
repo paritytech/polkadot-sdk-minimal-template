@@ -27,8 +27,7 @@ jobs:
       - name: Run the prerequisites script
         run: |
           DIST="$(echo "${{ matrix.container }}" | cut -d':' -f1)"
-          bash ./.github/scripts/${DIST}-prerequisites.sh
-        shell: bash
+          sh ./.github/scripts/${DIST}-prerequisites.sh
 
       # We've run into out-of-disk error when compiling Polkadot in the next step, so we free up some space this way.
       - name: Free Disk Space (Ubuntu)
