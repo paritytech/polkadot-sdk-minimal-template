@@ -44,7 +44,7 @@ jobs:
           swap-storage: false
 
       - name: Build the template
-        run: /root/.cargo/bin/cargo build
+        run: /github/home/.cargo/bin/cargo build
         timeout-minutes: 90
 
       - name: Run clippy
