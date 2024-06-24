@@ -1,17 +1,14 @@
 [package]
 name = "minimal-template-node"
-description = "A minimal Substrate-based Substrate node, ready for hacking. (polkadot v1.12.0)"
+description = "A minimal Substrate-based Substrate node, ready for hacking. (polkadot v1.13.0)"
 version = "0.1.0"
-license = "MIT-0"
+license = "Unlicense"
 authors.workspace = true
 homepage.workspace = true
 repository.workspace = true
 edition.workspace = true
 publish = false
 build = "build.rs"
-
-[lints]
-workspace = true
 
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]
@@ -22,31 +19,31 @@ futures = { version = "0.3.30", features = ["thread-pool"] }
 futures-timer = "3.0.1"
 jsonrpsee = { version = "0.22", features = ["server"] }
 serde_json = { workspace = true, default-features = true }
-sc-cli = { version = "0.42.0" }
-sc-executor = { version = "0.38.0" }
-sc-network = { version = "0.40.0" }
-sc-service = { version = "0.41.0" }
-sc-telemetry = { version = "20.0.0" }
-sc-transaction-pool = { version = "34.0.0" }
-sc-transaction-pool-api = { version = "34.0.0" }
-sc-consensus = { version = "0.39.1" }
-sc-consensus-manual-seal = { version = "0.41.0" }
-sc-rpc-api = { version = "0.39.0" }
-sc-basic-authorship = { version = "0.40.0" }
-sc-offchain = { version = "35.0.0" }
-sc-client-api = { version = "34.0.0" }
-sp-timestamp = { version = "32.0.0" }
-sp-keyring = { version = "37.0.0" }
-sp-api = { version = "32.0.0" }
-sp-blockchain = { version = "34.0.0" }
-sp-block-builder = { version = "32.0.0" }
-sp-io = { version = "36.0.0" }
-sp-runtime = { version = "37.0.0" }
-substrate-frame-rpc-system = { version = "34.0.0" }
+sc-cli = { version = "0.43.0" }
+sc-executor = { version = "0.39.0" }
+sc-network = { version = "0.41.0" }
+sc-service = { version = "0.42.0" }
+sc-telemetry = { version = "21.0.0" }
+sc-transaction-pool = { version = "35.0.0" }
+sc-transaction-pool-api = { version = "35.0.0" }
+sc-consensus = { version = "0.40.0" }
+sc-consensus-manual-seal = { version = "0.42.0" }
+sc-rpc-api = { version = "0.40.0" }
+sc-basic-authorship = { version = "0.41.0" }
+sc-offchain = { version = "36.0.0" }
+sc-client-api = { version = "35.0.0" }
+sp-timestamp = { version = "33.0.0" }
+sp-keyring = { version = "38.0.0" }
+sp-api = { version = "33.0.0" }
+sp-blockchain = { version = "35.0.0" }
+sp-block-builder = { version = "33.0.0" }
+sp-io = { version = "37.0.0" }
+sp-runtime = { version = "38.0.0" }
+substrate-frame-rpc-system = { version = "35.0.0" }
 
 # Once the native runtime is gone, there should be little to no dependency on FRAME here, and
 # certainly no dependency on the runtime.
-frame = { version = "0.3.0", package = "polkadot-sdk-frame", features = ["experimental", "runtime"] }
+frame = { version = "0.4.0", package = "polkadot-sdk-frame", features = ["experimental", "runtime"] }
 runtime = { package = "minimal-template-runtime", path = "../runtime", version = "0.1.0" }
 
 [build-dependencies]
