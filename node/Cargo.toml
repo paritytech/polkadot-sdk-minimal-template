@@ -1,6 +1,6 @@
 [package]
 name = "minimal-template-node"
-description = "A minimal Substrate-based Substrate node, ready for hacking. (polkadot v1.14.0)"
+description = "A minimal Substrate-based Substrate node, ready for hacking. (polkadot v1.15.0)"
 version = "0.1.0"
 license = "Unlicense"
 authors.workspace = true
@@ -20,32 +20,54 @@ futures = { features = ["thread-pool"], workspace = true }
 futures-timer = { workspace = true }
 jsonrpsee = { features = ["server"], workspace = true }
 serde_json = { workspace = true, default-features = true }
-sc-cli = { version = "0.44.0", workspace = true, default-features = true }
-sc-executor = { version = "0.39.0", workspace = true, default-features = true }
-sc-network = { version = "0.42.0", workspace = true, default-features = true }
-sc-service = { version = "0.43.0", workspace = true, default-features = true }
-sc-telemetry = { version = "22.0.0", workspace = true, default-features = true }
-sc-transaction-pool = { version = "35.0.0", workspace = true, default-features = true }
-sc-transaction-pool-api = { version = "35.0.0", workspace = true, default-features = true }
-sc-consensus = { version = "0.41.0", workspace = true, default-features = true }
-sc-consensus-manual-seal = { version = "0.43.0", workspace = true, default-features = true }
-sc-rpc-api = { version = "0.41.0", workspace = true, default-features = true }
-sc-basic-authorship = { version = "0.42.0", workspace = true, default-features = true }
-sc-offchain = { version = "37.0.0", workspace = true, default-features = true }
-sc-client-api = { version = "35.1.0", workspace = true, default-features = true }
-sp-timestamp = { version = "33.0.0", workspace = true, default-features = true }
-sp-keyring = { version = "38.0.0", workspace = true, default-features = true }
-sp-api = { version = "33.0.0", workspace = true, default-features = true }
-sp-blockchain = { version = "35.1.0", workspace = true, default-features = true }
-sp-block-builder = { version = "33.0.0", workspace = true, default-features = true }
-sp-io = { version = "37.0.0", workspace = true, default-features = true }
-sp-runtime = { version = "38.0.0", workspace = true, default-features = true }
-substrate-frame-rpc-system = { version = "36.0.0", workspace = true, default-features = true }
+sc-cli.workspace = true
+sc-cli.default-features = true
+sc-executor.workspace = true
+sc-executor.default-features = true
+sc-network.workspace = true
+sc-network.default-features = true
+sc-service.workspace = true
+sc-service.default-features = true
+sc-telemetry.workspace = true
+sc-telemetry.default-features = true
+sc-transaction-pool.workspace = true
+sc-transaction-pool.default-features = true
+sc-transaction-pool-api.workspace = true
+sc-transaction-pool-api.default-features = true
+sc-consensus.workspace = true
+sc-consensus.default-features = true
+sc-consensus-manual-seal.workspace = true
+sc-consensus-manual-seal.default-features = true
+sc-rpc-api.workspace = true
+sc-rpc-api.default-features = true
+sc-basic-authorship.workspace = true
+sc-basic-authorship.default-features = true
+sc-offchain.workspace = true
+sc-offchain.default-features = true
+sc-client-api.workspace = true
+sc-client-api.default-features = true
+sp-timestamp.workspace = true
+sp-timestamp.default-features = true
+sp-keyring.workspace = true
+sp-keyring.default-features = true
+sp-api.workspace = true
+sp-api.default-features = true
+sp-blockchain.workspace = true
+sp-blockchain.default-features = true
+sp-block-builder.workspace = true
+sp-block-builder.default-features = true
+sp-io.workspace = true
+sp-io.default-features = true
+sp-runtime.workspace = true
+sp-runtime.default-features = true
+substrate-frame-rpc-system.workspace = true
+substrate-frame-rpc-system.default-features = true
 frame = { features = ["experimental", "runtime"], workspace = true, default-features = true }
-minimal-template-runtime = { version = "0.1.0", workspace = true }
+minimal-template-runtime.workspace = true
 
 [build-dependencies]
-substrate-build-script-utils = { version = "11.0.0", workspace = true, default-features = true }
+substrate-build-script-utils.workspace = true
+substrate-build-script-utils.default-features = true
 
 [features]
 default = []

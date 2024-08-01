@@ -1,6 +1,6 @@
 [package]
 name = "pallet-minimal-template"
-description = "A minimal pallet built with FRAME, part of Polkadot Sdk. (polkadot v1.14.0)"
+description = "A minimal pallet built with FRAME, part of Polkadot Sdk. (polkadot v1.15.0)"
 version = "0.1.0"
 license = "Unlicense"
 authors.workspace = true
