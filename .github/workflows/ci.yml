@@ -70,7 +70,9 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - run: brew install docker
+        if: contains("${{ matrix.os }}", "macos")
 
       # We've run into out-of-disk error when compiling Polkadot in the next step, so we free up some space this way.
       - name: Free Disk Space (Ubuntu)
