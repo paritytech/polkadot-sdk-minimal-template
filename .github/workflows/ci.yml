@@ -70,6 +70,8 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest]
     steps:
+      - run: echo "Running on ${{ matrix.os }}. Is it MACOS? $MACOS"
+        if: ${{ matrix.os == "macos-latest" }}
       - uses: actions/checkout@v4
       - run: brew install docker
         if: contains("${{ matrix.os }}", "macos")
