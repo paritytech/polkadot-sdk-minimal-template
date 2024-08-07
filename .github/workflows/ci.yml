@@ -20,7 +20,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Rust compilation prerequisites
+      - name: Rust compilation prerequisites (Ubuntu)
+        if: ${{ matrix.os }} === "ubuntu-latest"
         run: |
           sudo apt update
           sudo apt install -y \
@@ -28,8 +29,13 @@ jobs:
           rustup target add wasm32-unknown-unknown
           rustup component add rustfmt clippy rust-src
 
+      - name: Install Cargo (MacOS)
+        if: ${{ matrix.os }} === "macos-lates"
+        run: curl https://sh.rustup.rs -sSf | sh
+
       # We've run into out-of-disk error when compiling Polkadot in the next step, so we free up some space this way.
       - name: Free Disk Space (Ubuntu)
+        if: ${{ matrix.os }} === "ubuntu-latest"
         uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be # 1.3.1
         with:
           android: true # This alone is a 12 GB save.
