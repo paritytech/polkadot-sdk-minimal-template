@@ -69,14 +69,9 @@ jobs:
         timeout-minutes: 15
 
   build-docker:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: brew install docker
-        if: contains(matrix.os, 'macos')
 
       # We've run into out-of-disk error when compiling Polkadot in the next step, so we free up some space this way.
       - name: Free Disk Space (Ubuntu)
