@@ -63,7 +63,7 @@ jobs:
         run: |
           ./target/release/minimal-template-node --dev 2>&1 | tee out.txt &
           until curl -s '127.0.0.1:9944'; do sleep 5; done
-          until curl -s 'cat out.txt | grep -s "Imported #2"'; do sleep 5; done
+          until cat out.txt | grep -s "Imported #2"; do sleep 5; done
         shell: bash
         timeout-minutes: 5
 
