@@ -35,6 +35,7 @@ jobs:
           curl https://sh.rustup.rs -sSf -y | sh
           brew install protobuf
           rustup target add wasm32-unknown-unknown --toolchain stable-aarch64-apple-darwin
+          rustup component add rust-src --toolchain stable-aarch64-apple-darwin
 
       # We've run into out-of-disk error when compiling Polkadot in the next step, so we free up some space this way.
       - name: Free Disk Space (Ubuntu)
