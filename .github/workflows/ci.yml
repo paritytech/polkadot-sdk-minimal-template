@@ -37,9 +37,6 @@ jobs:
           rustup target add wasm32-unknown-unknown --toolchain stable-aarch64-apple-darwin
           rustup component add rust-src --toolchain stable-aarch64-apple-darwin
 
-      - run: df
-        if: contains(matrix.os, 'macos')
-
       # We've run into out-of-disk error when compiling Polkadot in the next step, so we free up some space this way.
       - name: Free Disk Space (Ubuntu)
         if: contains(matrix.os, 'ubuntu')
@@ -70,9 +67,6 @@ jobs:
       - name: Build the docs
         run: SKIP_WASM_BUILD=1 cargo doc --workspace --no-deps
         timeout-minutes: 15
-
-      - run: df
-        if: contains(matrix.os, 'macos')
 
   build-docker:
     runs-on: ubuntu-latest
