@@ -31,7 +31,7 @@ jobs:
 
       - name: Install Cargo (MacOS)
         if: contains(matrix.os, 'macos')
-        run: curl https://sh.rustup.rs -sSf | sh
+        run: curl https://sh.rustup.rs -sSf -y | sh
 
       # We've run into out-of-disk error when compiling Polkadot in the next step, so we free up some space this way.
       - name: Free Disk Space (Ubuntu)
