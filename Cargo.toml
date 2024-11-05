@@ -6,51 +6,18 @@ repository = "https://github.com/paritytech/polkadot-sdk-minimal-template.git"
 edition = "2021"
 
 [workspace]
-members = [
-    "node",
-    "pallets/template",
-    "runtime",
-]
+members = ["node", "pallets/template", "runtime"]
 resolver = "2"
 
 [workspace.dependencies]
 minimal-template-runtime = { path = "./runtime", default-features = false }
 pallet-minimal-template = { path = "./pallets/template", default-features = false }
-clap = { version = "4.5.3" }
+clap = { version = "4.5.10" }
 docify = { version = "0.2.8" }
-frame = { version = "0.6.0", default-features = false, package = "polkadot-sdk-frame" }
 futures = { version = "0.3.30" }
 futures-timer = { version = "3.0.2" }
-jsonrpsee = { version = "0.23.2" }
-sc-basic-authorship = { version = "0.44.0", default-features = false }
-sc-cli = { version = "0.46.0", default-features = false }
-sc-client-api = { version = "37.0.0", default-features = false }
-sc-consensus = { version = "0.43.0", default-features = false }
-sc-consensus-manual-seal = { version = "0.45.0", default-features = false }
-sc-executor = { version = "0.40.0", default-features = false }
-sc-network = { version = "0.44.0", default-features = false }
-sc-offchain = { version = "39.0.0", default-features = false }
-sc-rpc-api = { version = "0.43.0", default-features = false }
-sc-service = { version = "0.45.0", default-features = false }
-sc-telemetry = { version = "24.0.0", default-features = false }
-sc-transaction-pool = { version = "37.0.0", default-features = false }
-sc-transaction-pool-api = { version = "37.0.0", default-features = false }
-serde_json = { version = "1.0.114", default-features = false }
-sp-api = { version = "34.0.0", default-features = false }
-sp-block-builder = { version = "34.0.0", default-features = false }
-sp-blockchain = { version = "37.0.0", default-features = false }
-sp-io = { version = "38.0.0", default-features = false }
-sp-keyring = { version = "39.0.0", default-features = false }
-sp-runtime = { version = "39.0.0", default-features = false }
-sp-timestamp = { version = "34.0.0", default-features = false }
-substrate-frame-rpc-system = { version = "38.0.0", default-features = false }
-substrate-build-script-utils = { version = "11.0.0", default-features = false }
+jsonrpsee = { version = "0.24.3" }
+polkadot-sdk = { version = "0.7.0", default-features = false }
+serde_json = { version = "1.0.127", default-features = false }
 codec = { version = "3.6.12", default-features = false, package = "parity-scale-codec" }
-pallet-balances = { version = "38.0.0", default-features = false }
-pallet-sudo = { version = "37.0.0", default-features = false }
-pallet-timestamp = { version = "36.0.0", default-features = false }
-pallet-transaction-payment = { version = "37.0.0", default-features = false }
-pallet-transaction-payment-rpc-runtime-api = { version = "37.0.0", default-features = false }
 scale-info = { version = "2.11.1", default-features = false }
-sp-genesis-builder = { version = "0.15.0", default-features = false }
-substrate-wasm-builder = { version = "24.0.0", default-features = false }

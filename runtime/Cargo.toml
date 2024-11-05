@@ -1,6 +1,6 @@
 [package]
 name = "minimal-template-runtime"
-description = "A solochain runtime template built with Substrate, part of Polkadot Sdk. (polkadot v1.15.0)"
+description = "A solochain runtime template built with Substrate, part of Polkadot Sdk."
 version = "0.1.0"
 license = "Unlicense"
 authors.workspace = true
@@ -12,36 +12,17 @@ publish = false
 [dependencies]
 codec = { workspace = true }
 scale-info = { workspace = true }
-frame = { features = ["experimental", "runtime"], workspace = true }
-pallet-balances.workspace = true
-pallet-sudo.workspace = true
-pallet-timestamp.workspace = true
-pallet-transaction-payment.workspace = true
-pallet-transaction-payment-rpc-runtime-api.workspace = true
-sp-genesis-builder.workspace = true
-sp-runtime = { features = ["serde"], workspace = true }
+polkadot-sdk = { workspace = true, features = ["experimental", "pallet-balances", "pallet-sudo", "pallet-timestamp", "pallet-transaction-payment", "pallet-transaction-payment-rpc-runtime-api", "runtime"] }
 pallet-minimal-template.workspace = true
 
 [build-dependencies]
-substrate-wasm-builder = { optional = true, workspace = true, default-features = true }
+polkadot-sdk = { optional = true, workspace = true, features = ["substrate-wasm-builder"] }
 
 [features]
 default = ["std"]
 std = [
 	"codec/std",
-	"scale-info/std",
-
-	"frame/std",
-
-	"pallet-balances/std",
-	"pallet-sudo/std",
-	"pallet-timestamp/std",
-	"pallet-transaction-payment-rpc-runtime-api/std",
-	"pallet-transaction-payment/std",
-
 	"pallet-minimal-template/std",
-
-	"sp-genesis-builder/std",
-	"sp-runtime/std",
-	"substrate-wasm-builder",
+	"polkadot-sdk/std",
+	"scale-info/std",
 ]
