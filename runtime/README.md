@@ -12,4 +12,4 @@ responsible for validating blocks and executing the state changes they define.
 
 ## Release
 
-Polkadot SDK stable2409
+Polkadot SDK Stable 2412
