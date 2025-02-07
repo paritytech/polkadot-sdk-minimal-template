@@ -6,18 +6,23 @@ repository = "https://github.com/paritytech/polkadot-sdk-minimal-template.git"
 edition = "2021"
 
 [workspace]
-members = ["node", "pallets/template", "runtime"]
+default-members = ["pallets/template", "runtime"]
+members = [
+    "node",
+    "pallets/template",
+    "runtime",
+]
 resolver = "2"
 
 [workspace.dependencies]
 minimal-template-runtime = { path = "./runtime", default-features = false }
 pallet-minimal-template = { path = "./pallets/template", default-features = false }
-clap = { version = "4.5.10" }
-docify = { version = "0.2.8" }
-futures = { version = "0.3.30" }
+clap = { version = "4.5.13" }
+docify = { version = "0.2.9" }
+futures = { version = "0.3.31" }
 futures-timer = { version = "3.0.2" }
 jsonrpsee = { version = "0.24.3" }
-polkadot-sdk = { version = "0.7.0", default-features = false }
-serde_json = { version = "1.0.127", default-features = false }
+polkadot-sdk = { version = "0.10.1", default-features = false }
+serde_json = { version = "1.0.132", default-features = false }
 codec = { version = "3.6.12", default-features = false, package = "parity-scale-codec" }
 scale-info = { version = "2.11.1", default-features = false }

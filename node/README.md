@@ -20,4 +20,4 @@ It's a place to configure consensus-related topics. In favor of minimalism, this
 
 ## Release
 
-Polkadot SDK stable2409
+Polkadot SDK Stable 2412
