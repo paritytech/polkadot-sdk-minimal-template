@@ -54,7 +54,7 @@ jobs:
           rustup component add rust-src
 
       - name: Build the template
-        run: cargo build --locked --release
+        run: cargo build --locked --release --all-features --all-targets
         timeout-minutes: 90
 
       - name: Upload the binaries
