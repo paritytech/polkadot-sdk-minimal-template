@@ -61,7 +61,7 @@ jobs:
         uses: ./.github/actions/macos-dependencies
 
       - name: Build the node individually in release mode
-        run: cargo build --package minimal-template-node --release
+        run: cargo build --package minimal-template-node --release --locked --all-features --all-targets
         timeout-minutes: 90
 
       - name: Make sure the node is producing blocks
