@@ -82,6 +82,10 @@ be used to run the minimal template's runtime. `polkadot-omni-node` binary crate
 
 Please see installation section on [crates.io/omni-node](https://crates.io/crates/polkadot-omni-node).
 
+```sh
+cargo install polkadot-omni-node
+```
+
 #### Build `minimal-template-runtime`
 
 ```sh
@@ -91,6 +95,10 @@ cargo build -p minimal-template-runtime --release
 #### Install `staging-chain-spec-builder`
 
 Please see the installation section at [`crates.io/staging-chain-spec-builder`](https://crates.io/crates/staging-chain-spec-builder).
+
+```sh
+cargo install staging-chain-spec-builder
+```
 
 #### Use chain-spec-builder to generate the chain_spec.json file
 
