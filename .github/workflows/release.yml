@@ -44,15 +44,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Rust compilation prerequisites
-        run: |
-          sudo apt update
-          sudo apt install -y \
-            protobuf-compiler
-          rustup target add wasm32-unknown-unknown
-          rustup component add rust-src
-
+      - uses: ./.github/actions/ubuntu-dependencies 
+    
       - name: Build the template
         run: cargo build --locked --release --all-features --all-targets
         timeout-minutes: 90
